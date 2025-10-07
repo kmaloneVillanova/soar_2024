@@ -154,7 +154,7 @@ def compute_classifier_metrics(actual_labels,
 
 def train_rf_classifier(ecdf, segmented_data):
     # RF classifier initiation and training
-    rf = RandomForestClassifier()
+    rf = RandomForestClassifier(n_estimators=200)
     rf.fit(ecdf['train'], segmented_data['train']['labels'])
 
     # Predicting on all dataset splits for obtain performance
